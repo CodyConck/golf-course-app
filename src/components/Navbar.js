@@ -8,8 +8,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -48,8 +49,14 @@ export default function Header() {
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
-            <MenuItem onClick={handleClose}>News</MenuItem>
+            <Link to="/news">
+              <MenuItem onClick={handleClose}>News</MenuItem>
+            </Link>
+            <Link to="/">
+              <MenuItem onClick={handleClose}>Home</MenuItem>
+            </Link>
           </Menu>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Golf Stuff
           </Typography>
