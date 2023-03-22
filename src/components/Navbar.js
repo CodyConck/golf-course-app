@@ -46,14 +46,20 @@ export default function Navbar() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-            <Link to="/news">
+            <Link className="link" to="/">
+              <MenuItem onClick={handleClose}>Home</MenuItem>
+            </Link>
+            <Link className="link" to="/news">
               <MenuItem onClick={handleClose}>News</MenuItem>
             </Link>
-            <Link to="/">
-              <MenuItem onClick={handleClose}>Home</MenuItem>
+            <Link className="link" to="/profile">
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+            </Link>
+            <Link className="link" to="/myaccount">
+              <MenuItem onClick={handleClose}>My Account</MenuItem>
+            </Link>
+            <Link className="link" to="/logout">
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
             </Link>
           </Menu>
 

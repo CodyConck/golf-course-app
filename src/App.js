@@ -2,16 +2,11 @@ import NavBar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import News from "./pages/News";
+import MyAccount from "./pages/MyAccount";
+import Profile from "./pages/Profile";
+import Logout from "./pages/Logout";
 
 import "./App.css";
-
-//this works but needs to be in news.js and exported somehow to click event
-async function fetchGolfNews() {
-  const URL = `https://api.sportsdata.io/golf/v2/json/News?key=24c69ca6a3d246ef91da0ffe95be330a`;
-  const response = await fetch(`${URL}`);
-  const newsData = await response.json();
-  console.log(newsData);
-}
 
 function App() {
   return (
@@ -20,12 +15,10 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/news"
-            element={<News />}
-            //thi onClick below doesnt work
-            onClick={fetchGolfNews()}
-          ></Route>
+          <Route path="/news" element={<News />}></Route>
+          <Route path="/myaccount" element={<MyAccount />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
         </Routes>
       </div>
     </div>
