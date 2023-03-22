@@ -67,6 +67,7 @@ export default function Navbar() {
             Golf Stuff
           </Typography>
           <Button color="inherit">Login</Button>
+          <Button color="inherit">SignUp</Button>
         </Toolbar>
       </AppBar>
     </Box>

@@ -2,3 +2,8 @@
   text-decoration: none;
   color: #1976d2;
 }
+.news-container {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
