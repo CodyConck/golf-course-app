@@ -62,60 +62,58 @@ const News = () => {
       setExpanded(!expanded);
     };
     return (
-      <div className="news-container">
-        <Card sx={{ maxWidth: 345 }}>
-          <CardHeader
-            // avatar={
-            //   // <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            //   //   R
-            //   // </Avatar>
-            // }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={title}
-            subheader={date}
-          />
-          <CardMedia
-            component="img"
-            height="194"
-            image="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            alt="golf image placeholder"
-          />
+      <Card className="news-container" sx={{ maxWidth: 345 }}>
+        <CardHeader
+          // avatar={
+          //   // <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          //   //   R
+          //   // </Avatar>
+          // }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={title}
+          subheader={date}
+        />
+        <CardMedia
+          component="img"
+          height="194"
+          image="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          alt="golf image placeholder"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {content}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {content}
-            </Typography>
+            <Typography paragraph>Something Else:</Typography>
+            <Typography paragraph>TBD</Typography>
+            <Typography paragraph>More Stuff</Typography>
+            <Typography paragraph>More Stuff</Typography>
+            <Typography>More stuff</Typography>
           </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent>
-              <Typography paragraph>Something Else:</Typography>
-              <Typography paragraph>TBD</Typography>
-              <Typography paragraph>More Stuff</Typography>
-              <Typography paragraph>More Stuff</Typography>
-              <Typography>More stuff</Typography>
-            </CardContent>
-          </Collapse>
-        </Card>
-      </div>
+        </Collapse>
+      </Card>
     );
   };
 
